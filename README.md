@@ -48,6 +48,7 @@ Usage
 Use the following credentials to log into the platform 
 
 Username : administrator
+
 Password : administrator
 
 Once In, Log in into Settings Page, Upload the site's logo and you are good to go.
@@ -56,4 +57,5 @@ Enjoy !
 
 
 [1]: (coming soon)
+
 [2]: https://symfony.com/doc/current/reference/requirements.html
