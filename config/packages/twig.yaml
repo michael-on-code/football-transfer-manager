@@ -1,5 +1,11 @@
 twig:
     default_path: '%kernel.project_dir%/templates'
+    form_themes: [
+        '/_themes/form_row.part.html.twig',
+        '/_themes/form_errors.part.html.twig',
+        ]
+    globals:
+        siteOptionsDuplicate: "%%"
 
 when@test:
     twig:

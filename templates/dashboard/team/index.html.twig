@@ -1,0 +1,214 @@
+{% extends '_parts/dashboard.part.html.twig' %}
+
+{% block title %}Add Team{% endblock %}
+
+{% block dashboardBody %}
+    <div class="body-wrapper">
+        <div class="container-fluid">
+        <div class="mb-3">
+        <a href=" {{ path('app_team_add') }} " class="btn btn-primary">Add a new team</a>
+        <a href=" {{ path('app_player_add') }} " class="btn btn-success ml-3">Add a new player</a>
+        </div>
+            <div class="card bg-light-info shadow-none position-relative overflow-hidden">
+                <div class="card-body px-4 py-3">
+                    <div class="row align-items-center">
+                        <div class="col-9">
+                            <h4 class="fw-semibold mb-8">Teams list</h4>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a class="text-muted"
+                                                                   href="{{ path('app_dashboard') }}">Dashboard</a></li>
+                                    <li class="breadcrumb-item" aria-current="page">Teams</li>
+                                </ol>
+                            </nav>
+                        </div>
+                        <div class="col-3">
+                            <div class="text-center mb-n5">
+                                <img src="{{ asset('admin/images/breadcrumb/ChatBc.png') }}" alt=""
+                                     class="img-fluid mb-n4">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    {# {{ form_start(teamForm) }} #}
+                    {% if teams %}
+                    <div class="row">
+
+                        <div class="col-lg-6 d-flex align-items-stretch">
+                            <div class="card w-100 position-relative">
+                                <div class=" ">
+                                    {# <h5 class="card-title fw-semibold">Add team</h5>
+                                    <p class="card-subtitle mb-4">Add the new team here</p> #}
+                                    <div class="table-responsive rounded-2">
+                                        <table class="sampleTable table border text-nowrap customize-table mb-0 align-middle">
+                                            <thead class="text-dark fs-4">
+                                            <tr>
+                                                <th><h6 class="fs-4 fw-semibold mb-0">Club</h6></th>
+                                                <th><h6 class="fs-4 fw-semibold mb-0">Preview</h6></th>
+                                                <th><h6 class="fs-4 fw-semibold mb-0">Players</h6></th>
+                                                <th></th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            {% for team in teams %}
+                                                <tr class="{{ loop.first ? ( team.players|length > 0 ? 'is-active bg-light-info' : '' ): '' }}">
+                                                    <td >
+                                                        <a title="View {{ team.name }}'s players" {{ team.players|length == 0 ? 'dontTooltip=""' : ''}} data-bs-toggle="{{ team.players|length > 0  ? 'my-tab' : '--' }}" role="tab" tabindex="-1"
+                                                           href="#" data-href="{{ 'tab-team-' ~ team.id }}">
+                                                            <div class="d-flex align-items-center">
+
+                                                                <img src="{{ asset('uploads/' ~ team.logo ) }}"
+                                                                     class="rounded-2" width="42" height="42"/>
+                                                                <div class="ms-3">
+                                                                    <h6 class="fw-semibold mb-1"> {{ team.name }} {{ showCountryEmoji(team.country) }}</h6>
+                                                                    <span class="fw-normal"> <i
+                                                                                class="ti ti-wallet"></i> {{ (team.balance)|number_format(0, '.', ' ') }} {{ siteOptions.siteCurrency }}</span>
+                                                                </div>
+
+                                                            </div>
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        {% if team.players|length > 0 %}
+                                                            <div class="d-flex align-items-center">
+                                                                {% for player in team.players|sort((a, b) => b.created_at <=> a.created_at)|slice(0, 3) %}
+                                                                    <a title="Edit {{ player.surname }} "
+                                                                       href=" {{ path('app_player_edit', {'id': player.id} ) }} ">
+                                                                        <img src="{{ asset('uploads/'~ player.photo) }}"
+                                                                             class="rounded-circle me-n2 card-hover border border-2 border-white"
+                                                                             width="39" height="39">
+                                                                    </a>
+                                                                {% endfor %}
+                                                            </div>
+                                                        {% endif %}
+                                                    </td>
+                                                    <td><p class="mb-0 fw-normal text-center"> {{ team.players|length }} </p></td>
+                                                    <td>
+                                                    {% if team.players|length > 0 %}
+                                                    <a style="margin-right:10px" title="View {{ team.name }}'s players" data-bs-toggle="my-tab" role="tab" tabindex="-1"
+                                                           href="#" data-href="{{ 'tab-team-' ~ team.id }}" class="text-muted">
+                                                                <i class="ti ti-eye fs-5"></i>
+                                                    </a>
+                                                    {% endif %}
+                                                    <a href=" {{ path('app_team_edit', {'id': team.id } ) }} " title="Edit {{ team.name }} " class="text-muted">
+                                                                <i class="ti ti-pencil fs-5"></i>
+                                                    </a>
+                                                    
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+                                            </tbody>
+                                        </table>
+                                        {# <div class="my-pagination">
+                                            <nav aria-label="Page navigation example">
+                                                <ul id="#myPaginator" class="pagination">
+                                                    <li class="page-item">
+                                                        <a class="page-link link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">
+                              <i class="ti ti-chevrons-left fs-4"></i>
+                            </span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="page-item">
+                                                        <a class="page-link link" href="#">1</a>
+                                                    </li>
+                                                    <li class="page-item">
+                                                        <a class="page-link link" href="#">2</a>
+                                                    </li>
+                                                    <li class="page-item">
+                                                        <a class="page-link link" href="#">3</a>
+                                                    </li>
+                                                    <li class="page-item">
+                                                        <a class="page-link link" href="#" aria-label="Next">
+                            <span aria-hidden="true">
+                              <i class="ti ti-chevrons-right fs-4"></i>
+                            </span>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div> #}
+                                    </div>
+                                    
+
+
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-6 d-flex align-items-stretch">
+                            <div class="card p-4 w-100 position-relative team-page-card">
+                            <div class="tab-content" >
+                            {% for team in teams %}
+                              <div class="tab-pane {{ loop.first ? (team.players|length > 0 ? 'active show' : ''): '' }}" id="{{ 'tab-team-' ~ team.id }}" role="tabpanel">
+                                  <div class="team-title">
+                                    <img class="rounded-2" width="32" height="32" src=" {{ asset('uploads/' ~ team.logo) }} " />
+                                    <h5 class=" text-center">{{ team.name }}'s Players</h5>
+                                  </div>
+
+                                  
+                                <div class="row">
+                                {% if team.players|length > 0 %}
+
+                                {% for player in team.players|sort((a, b) => b.created_at <=> a.created_at) %}
+
+                                <div class="col-md-6">
+              <div class="card hover-img">
+                <div class="card-body p-4 text-center border-bottom">
+                  <img src="{{ asset('uploads/' ~ player.photo ) }}" alt="" class="rounded-circle mb-3" width="80" height="80">
+                  <h5 class="fw-semibold mb-0 fs-5"> {{player.surname}} {{ showCountryEmoji(player.country) }} </h5>
+                  <span class="text-dark fs-2">{{player.fullname}}</span>
+                </div>
+                <ul class="px-2 py-2 list-unstyled d-flex align-items-center justify-content-space-around mb-0">
+                  <li class="position-relative">
+                  <a title="Edit {{player.surname}}" href=" {{ path('app_player_edit', {'id' : player.id }) }} " class="btn btn-primary py-1 px-2 ms-auto">Edit</a>
+                    {# <a title="Edit {{player.surname}}" class="text-primary d-flex align-items-center justify-content-center p-2 fs-5 rounded-circle fw-semibold" href=" {{ path('app_player_edit', {'id' : player.id }) }} ">
+                      <i class="ti ti-pencil"></i>
+                    </a> #}
+                  </li>
+                  <li class="position-relative">
+                  <a href="{{ path('app_player_transfer', {'id': player.id } )  }}" class="btn btn-success py-1 px-2 ms-auto">Buy/Sell</a>
+                    {# <a title="Sell {{player.surname}}" class="text-danger d-flex align-items-center justify-content-center p-2 fs-5 rounded-circle fw-semibold " href="javascript:void(0)">
+                      <i class="ti ti-minus"></i>
+                    </a> #}
+                  </li>
+                </ul>
+              </div>
+            </div>
+                                {% endfor %}
+                                
+                                {% endif %}
+            
+                            </div>
+                              </div>
+
+                            {% endfor %}
+                              
+                                
+                            </div>
+                        </div>
+                        {#add new col-lg-6#}
+                    </div>
+                    {% else %}
+
+                    {% endif %}
+
+
+                </div>
+                {# {{ form_end(teamForm) }} #}
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}
+
+ {% block additionalScripts %}
+ <script src="https://cdn.jsdelivr.net/npm/jquery.fancytable/dist/fancyTable.min.js"></script>
+{# <script src="{{ asset('admin/libs/select2/dist/js/select2.full.min.js') }}"></script> #}
+{% endblock %}
+{# {% block additionalStyles %}
+<link rel="stylesheet"  href=" {{ asset('admin/libs/select2/dist/css/select2.min.css') }}">
+{% endblock %} #}

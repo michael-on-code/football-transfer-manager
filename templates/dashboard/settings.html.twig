@@ -1,0 +1,79 @@
+{% extends '_parts/dashboard.part.html.twig' %}
+
+{% block title %}General Settings{% endblock %}
+
+{% block dashboardBody %}
+<div class="body-wrapper">
+        <div class="container-fluid">
+          <div class="card bg-light-info shadow-none position-relative overflow-hidden">
+            <div class="card-body px-4 py-3">
+              <div class="row align-items-center">
+                <div class="col-9">
+                  <h4 class="fw-semibold mb-8">General Settings</h4>
+                  <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                      <li class="breadcrumb-item"><a class="text-muted" href="{{ path('app_dashboard') }}">Dashboard</a></li>
+                      <li class="breadcrumb-item" aria-current="page">General Setting</li>
+                    </ol>
+                  </nav>
+                </div>
+                <div class="col-3">
+                  <div class="text-center mb-n5">  
+                    <img src="{{ asset('admin/images/breadcrumb/ChatBc.png') }}" alt="" class="img-fluid mb-n4">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+            {{ form_start(settingsForm) }}
+              <div class="row">
+              
+                    <div class="col-lg-6 d-flex align-items-stretch">
+                      <div class="card w-100 position-relative overflow-hidden">
+                        <div class="card-body p-4">
+                          <h5 class="card-title fw-semibold">Site settings</h5>
+                          <p class="card-subtitle mb-4">Change the general settings here</p>
+                          {{ form_row(settingsForm.siteName) }}
+                          {{ form_row(settingsForm.siteDescription) }}
+                          {{ form_row(settingsForm.siteCurrency) }}
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-6 d-flex align-items-stretch">
+                      <div class="card w-100 position-relative overflow-hidden">
+                        <div class="card-body p-4">
+                        
+                          <h5 class="card-title fw-semibold">Site logo</h5>
+                          <p class="card-subtitle mb-4">Change the site logo from here</p>
+                          <div class="text-center picture-upload-container">
+                          {{ form_row(settingsForm.siteLogoFile) }}
+                          {{ form_row(settingsForm.siteLogo) }}
+                            <img src="{{ siteOptions.siteLogo|default ? asset('uploads/'~ siteOptions.siteLogo) : asset('admin/images/logos/dark-logo.svg') }}" alt="" class="img-fluid" width="120">
+                            <div class="d-flex align-items-center justify-content-center my-4 gap-3">
+                              {{ adminUploadTriggerButton('Choose') }}
+                            </div>
+                            <p class="mb-0">Allowed JPG or PNG. Max size of 1Mb</p>
+                          </div>
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-3">
+                    {{ adminSubmitButton('Update', '', {} , 'btn btn-primary w-auto') }}
+                    </div>
+                    
+                  </div>
+                  {{ form_end(settingsForm) }}
+            </div>
+          </div>
+        </div> 
+      </div>
+{% endblock %}
+
+{% block additionalScripts %}
+{# <script src="{{ asset('admin/libs/apexcharts/dist/apexcharts.min.js') }}"></script>
+<script src="{{ asset('admin/libs/owl.carousel/dist/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('admin/js/dashboard.js') }}"></script> #}
+{% endblock %}

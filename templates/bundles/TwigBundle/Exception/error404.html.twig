@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Error 404</title>
+        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="handheldfriendly" content="true" />
+    <meta name="MobileOptimized" content="width" />
+    {# <meta name="description" content="Mordenize" /> #}
+    <meta name="author" content="www.animashaunmichael.com" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Additional Styles -->
+    {% block additionalStyles %}{% endblock %}
+    <!-- Additional Styles -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!-- Core Css -->
+    <link id="themeColors" rel="stylesheet" href=" {{ asset('admin/css/style.min.css') }}" />
+    <link rel="stylesheet" href=" {{ asset('admin/css/stylesheet.css') }}" />
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+    <div class="page-wrapper" id="main-wrapper" data-layout="horizontal" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="fixed" data-header-position="fixed">
+      <div class="position-relative overflow-hidden min-vh-100 d-flex align-items-center justify-content-center">
+        <div class="d-flex align-items-center justify-content-center w-100">
+          <div class="row justify-content-center w-100">
+            <div class="col-lg-4">
+              <div class="text-center">
+                <img src="{{ asset('admin/images/illustrative/errorimg.svg') }}" alt="" class="img-fluid">
+                <h1 class="fw-semibold mb-7 fs-9">Opps!!!</h1>
+                <h4 class="fw-semibold mb-7">This page you are looking for could not be found.</h4>
+                <a class="btn btn-primary" href="{{ path('app_dashboard') }}" role="button">Go Back</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Import Js Files -->
+
+    <script src="{{ asset('admin/libs/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('admin/libs/simplebar/dist/simplebar.min.js') }}"></script>
+    <script src="{{ asset('admin/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+    <!-- core files -->
+    <script src="{{ asset('admin/js/app.min.js') }}"></script>
+    <script src="{{ asset('admin/js/app.horizontal.init.js') }}"></script>
+    <script src="{{ asset('admin/js/sidebarmenu.js') }}"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    {% block additionalScripts %}{% endblock %}
+    <script src="{{ asset('admin/js/custom.js') }}"></script>
+    
+    </body>
+</html>
