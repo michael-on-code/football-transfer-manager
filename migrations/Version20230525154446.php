@@ -32,7 +32,6 @@ final class Version20230525154446 extends AbstractMigration
         $this->addSql('ALTER TABLE player ADD CONSTRAINT FK_98197A65A76ED395 FOREIGN KEY (user_id) REFERENCES user (id)');
         $this->addSql('ALTER TABLE player ADD CONSTRAINT FK_98197A65296CD8AE FOREIGN KEY (team_id) REFERENCES team (id)');
         $this->addSql('ALTER TABLE team ADD CONSTRAINT FK_C4E0A61FA76ED395 FOREIGN KEY (user_id) REFERENCES user (id)');
-        $this->addSql("INSERT INTO admin (id, username, roles, password) VALUES (nextval('admin_id_seq'), 'administrator', '[\"ROLE_ADMIN\"]', '$2y$13\$FxWcLO4NOopenCeuLVuFbu4kH01A49a/Fg8ajvCDOIin21a8otVuK')");
     }
 
     public function down(Schema $schema): void
