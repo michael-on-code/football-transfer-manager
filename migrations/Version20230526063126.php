@@ -27,7 +27,7 @@ final class Version20230526063126 extends AbstractMigration
         (45, 'siteName', 'Transfer Manager'),
         (46, 'siteDescription', 'Imperdiet debitis in! Porttitor, repellendus harum pede! Eu amet aenean culpa, molestias. Quisquam doloremque optio varius. Malesuada. Quod, expedita animi.'),
         (47, 'siteCurrency', 'USD'),
-        (48, 'siteLogo', 'football-6470f037b0a35.png');");
+        (48, 'siteLogo', '');");
     }#
 
     public function down(Schema $schema): void
