@@ -1,7 +1,16 @@
 Internet Projects Ltd Test Task
 ========================
 
-Football Transfer Manager Project Task [A demo is available here][1].
+Football Transfer Manager Project Task.
+
+Demo
+------------
+
+Access [this link][1] to try a demo.
+
+Credentials : 
+  * Username : michaeloncode
+  * Password : administrator
 
 Requirements
 ------------
