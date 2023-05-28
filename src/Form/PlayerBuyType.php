@@ -39,7 +39,7 @@ class PlayerBuyType extends AbstractType
                     'html5'=>true,
                     'mapped'=>false,
                     'required'=>true,
-                    'attr'=>['class'=>'form-control']
+                    'attr'=>['class'=>'form-control', 'min'=>0]
             ])
             ->add('team', ChoiceType::class, [
                 'constraints'=>[

@@ -26,79 +26,79 @@ class TeamType extends AbstractType
     {
         $builder
             ->add('name', TextType::class, [
-                'constraints'=>[
+                'constraints' => [
                     new NotBlank([
-                        'message'=>'Field required'
+                        'message' => 'Field required'
                     ]),
                     new Length([
-                        'max'=>255,
-                        'maxMessage'=>'Field must not exceed {{ limit }} characters'
+                        'max' => 255,
+                        'maxMessage' => 'Field must not exceed {{ limit }} characters'
                     ])
-                    ],
-                    'attr'=>['class'=>'form-control'],
+                ],
+                'attr' => ['class' => 'form-control'],
             ])
             ->add('country', ChoiceType::class, [
-                'constraints'=>[
+                'constraints' => [
                     new NotBlank([
-                        'message'=>'Field required'
+                        'message' => 'Field required'
                     ]),
                     new Length([
-                        'max'=>4,
-                        'maxMessage'=>'Field must not exceed {{ limit }} characters'
+                        'max' => 4,
+                        'maxMessage' => 'Field must not exceed {{ limit }} characters'
                     ])
-                    
+
                 ],
-                'choices'=>Utils::getCountriesForSelect(),
-                'attr'=>['class'=>'select2']
+                'choices' => Utils::getCountriesForSelect(),
+                'attr' => ['class' => 'select2']
             ])
             ->add('logoFile', FileType::class, [
-                'constraints'=>[
+                'constraints' => [
                     new File([
                         'maxSize' => Utils::getUploadMaxSize(false),
                         'mimeTypes' => Utils::getImageMimeTypes(),
                         'mimeTypesMessage' => 'Please upload a valid image',
                     ]),
                     new NotBlank([
-                        'message'=>'Image required'
+                        'message' => 'Image required'
                     ]),
                 ],
-                'mapped'=>false,
-                'required'=>true,
-                'attr'=>[
-                    'class'=>'image-uploader visuallyhidden',
-                    'accept'=>implode(',', Utils::getUploadImageExtensions()),
-                    'data-maxsize'=>Utils::getUploadMaxSize()
+                'mapped' => false,
+                'required' => true,
+                'attr' => [
+                    'class' => 'image-uploader visuallyhidden',
+                    'accept' => implode(',', Utils::getUploadImageExtensions()),
+                    'data-maxsize' => Utils::getUploadMaxSize()
                 ]
             ])
             ->add('description', TextareaType::class, [
-                'constraints'=>[
+                'constraints' => [
                     new NotBlank([
-                        'message'=>'Required field',
+                        'message' => 'Required field',
                     ]),
                     new Length([
-                        'max'=>200,
-                        'maxMessage'=>'Field must not exceed {{ limit }} characters'
+                        'max' => 200,
+                        'maxMessage' => 'Field must not exceed {{ limit }} characters'
                     ])
-                    ],
-                    'required'=>true,
-                    'attr'=>['class'=>'form-control', 'rows'=>'4']
+                ],
+                'required' => true,
+                'attr' => ['class' => 'form-control', 'rows' => '4']
             ])
             ->add('balance', NumberType::class, [
-                'constraints'=>[
+                'constraints' => [
                     new NotBlank([
-                        'message'=>'Required field'
+                        'message' => 'Required field'
                     ]),
                     new PositiveOrZero([
-                        'message'=>'Amount must be a positive number'
+                        'message' => 'Amount must be a positive number'
                     ]),
-                    ],
-                    'label'=>'Initial Balance',
-                    'rounding_mode'=>NumberFormatter::ROUND_HALFUP,
-                    'scale'=>2,
-                    'html5'=>true,
-                    'mapped'=>false,
-                    'required'=>true,
-                    'attr'=>['class'=>'form-control']
+                ],
+                'label' => 'Initial Balance',
+                'rounding_mode' => NumberFormatter::ROUND_HALFUP,
+                'scale' => 2,
+                'html5' => true,
+                'mapped' => false,
+                'required' => true,
+                'attr' => ['class' => 'form-control', 'min' => 0]
             ])
             //->add('createdAt')
             //->add('user')
