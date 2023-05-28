@@ -1,7 +1,7 @@
 Internet Projects Ltd Test Task
 ========================
 
-Football Transfer Manager Project Task [demo][1]
+Football Transfer Manager Project Task [A demo is available here][1].
 
 Requirements
 ------------
@@ -56,6 +56,6 @@ Once In, Log in into Settings Page, Upload the site's logo and you are good to g
 Enjoy !
 
 
-[1]: (coming soon)
+[1]: http://michaeloncode.com/transfer-manager/public/index.php
 
 [2]: https://symfony.com/doc/current/reference/requirements.html
