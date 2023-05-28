@@ -1728,19 +1728,19 @@ class Utils {
             "unicode"=> "U+1F1FF U+1F1FC",
             "image"=> "https=>//cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/ZW.svg"
             ],
-            "ENGLAND"=> [
+            "ENG"=> [
             "name"=> "England",
             "emoji"=> "🏴󠁧󠁢󠁥󠁮󠁧󠁿",
             "unicode"=> "U+1F3F4 U+E0067 U+E0062 U+E0065 U+E006E U+E0067 U+E007F",
             "image"=> "https=>//cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/ENGLAND.svg"
             ],
-            "SCOTLAND"=> [
+            "SCO"=> [
             "name"=> "Scotland",
             "emoji"=> "🏴󠁧󠁢󠁳󠁣󠁴󠁿",
             "unicode"=> "U+1F3F4 U+E0067 U+E0062 U+E0073 U+E0063 U+E0074 U+E007F",
             "image"=> "https=>//cdn.jsdelivr.net/npm/country-flag-emoji-json@2.0.0/dist/images/SCOTLAND.svg"
             ],
-            "WALES"=> [
+            "WAL"=> [
             "name"=> "Wales",
             "emoji"=> "🏴󠁧󠁢󠁷󠁬󠁳󠁿",
             "unicode"=> "U+1F3F4 U+E0067 U+E0062 U+E0077 U+E006C U+E0073 U+E007F",
