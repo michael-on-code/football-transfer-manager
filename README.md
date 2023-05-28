@@ -65,6 +65,6 @@ Once In, Log in into Settings Page, Upload the site's logo and you are good to g
 Enjoy !
 
 
-[1]: http://michaeloncode.com/transfer-manager/public/index.php
+[1]: https://bit.ly/michaeloncode-transfer-manager
 
 [2]: https://symfony.com/doc/current/reference/requirements.html
