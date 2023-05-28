@@ -39,7 +39,7 @@ class PlayerAddType extends AbstractType
                     ]),
                     new Length([
                         'max'=>255,
-                        'maxMessage'=>'Field must not exceed {{limit}} characters'
+                        'maxMessage'=>'Field must not exceed {{ limit }} characters'
                     ])
                     ],
                     'attr'=>[
@@ -53,7 +53,7 @@ class PlayerAddType extends AbstractType
                     ]),
                     new Length([
                         'max'=>255,
-                        'maxMessage'=>'Field must not exceed {{limit}} characters'
+                        'maxMessage'=>'Field must not exceed {{ limit }} characters'
                     ])
                     ],
                     'attr'=>[
@@ -67,7 +67,7 @@ class PlayerAddType extends AbstractType
                     ]),
                     new Length([
                         'max'=>255,
-                        'maxMessage'=>'Field must not exceed {{limit}} characters'
+                        'maxMessage'=>'Field must not exceed {{ limit }} characters'
                     ])
                     ],
                     'attr'=>[
@@ -81,7 +81,7 @@ class PlayerAddType extends AbstractType
                     ]),
                     new Length([
                         'max'=>4,
-                        'maxMessage'=>'Field must not exceed {{limit}} characters'
+                        'maxMessage'=>'Field must not exceed {{ limit }} characters'
                     ])
                     
                 ],
@@ -139,7 +139,7 @@ class PlayerAddType extends AbstractType
                     ]),
                     new Length([
                         'max'=>4,
-                        'maxMessage'=>'Field must not exceed {{limit}} characters'
+                        'maxMessage'=>'Field must not exceed {{ limit }} characters'
                     ])
                 ],
                 'mapped'=>false,

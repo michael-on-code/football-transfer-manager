@@ -32,7 +32,7 @@ class TeamType extends AbstractType
                     ]),
                     new Length([
                         'max'=>255,
-                        'maxMessage'=>'Field must not exceed {{limit}} characters'
+                        'maxMessage'=>'Field must not exceed {{ limit }} characters'
                     ])
                     ],
                     'attr'=>['class'=>'form-control'],
@@ -44,7 +44,7 @@ class TeamType extends AbstractType
                     ]),
                     new Length([
                         'max'=>4,
-                        'maxMessage'=>'Field must not exceed {{limit}} characters'
+                        'maxMessage'=>'Field must not exceed {{ limit }} characters'
                     ])
                     
                 ],
@@ -77,7 +77,7 @@ class TeamType extends AbstractType
                     ]),
                     new Length([
                         'max'=>200,
-                        'maxMessage'=>'Field must not exceed {{limit}} characters'
+                        'maxMessage'=>'Field must not exceed {{ limit }} characters'
                     ])
                     ],
                     'required'=>true,

@@ -60,7 +60,7 @@ class PlayerBuyType extends AbstractType
                     ]),
                     new Length([
                         'max'=>200,
-                        'maxMessage'=>'Field must not exceed {{limit}} characters'
+                        'maxMessage'=>'Field must not exceed {{ limit }} characters'
                     ])
                     ],
                     'required'=>true,
