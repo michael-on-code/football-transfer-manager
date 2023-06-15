@@ -4,7 +4,7 @@ Internet Projects Ltd Test Task
 Football Transfer Manager Project Task.
 
 Business Logic
-========================
+------------
 
 We have football teams. Each team has a name, country, money balance and players.
 
