@@ -1,7 +1,7 @@
-Internet Projects Ltd Test Task
+Football Transfer Manager
 ========================
 
-Football Transfer Manager Project Task.
+A Simple Football Transfer Manager Project.
 
 Business Logic
 ------------
