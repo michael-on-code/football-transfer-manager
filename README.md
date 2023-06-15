@@ -3,6 +3,21 @@ Internet Projects Ltd Test Task
 
 Football Transfer Manager Project Task.
 
+Business Logic
+========================
+
+We have football teams. Each team has a name, country, money balance and players.
+
+Each player has name and surname.
+
+Teams can sell/buy players.
+
+What we need in our app:
+
+- Make a page (with pagination) displaying all teams and their players.
+- Make a page where we can add a new team and its players.
+- Make a page where we can sell/buy a player for a certain amount between two teams.
+
 Demo
 ------------
 
